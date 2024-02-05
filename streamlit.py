@@ -46,7 +46,7 @@ def main():
                 st.write("The comment is offensive")
             else:
                 st.write("The comment is not offensive")
-        if classification==1:         
+        if classification == 1:         
             multimodel_classification=classify_offensive(text_input_1)    
             if multimodel_classification == 0:
                 st.write("The comment is offensive targeting a group")
@@ -56,8 +56,5 @@ def main():
                 st.write("The comment is offensive untargeted")
                 
 
-
-
 if __name__ == "__main__":
-    main()                
-                  
+    main()
