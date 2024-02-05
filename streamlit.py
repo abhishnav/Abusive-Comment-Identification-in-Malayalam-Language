@@ -13,8 +13,8 @@ def classify_text(text):
     embeddings = model_output['last_hidden_state'].mean(dim=1).squeeze().numpy()
     input_embedding = embeddings.reshape(1, -1)  
 
-    binary_model=joblib.load('decision_tree_model.joblib')
-    result= binary_model.predict(input_embedding)
+    binary_model = joblib.load('decision_tree_model.joblib')
+    result = binary_model.predict(input_embedding)
     return result
 
 # Function to classify offensive comments into subcategories
@@ -27,13 +27,13 @@ def classify_offensive(text):
     embeddings = model_output['last_hidden_state'].mean(dim=1).squeeze().numpy()
     input_embedding = embeddings.reshape(1, -1)  
 
-    multi_model=joblib.load('decision_model.joblib')
-    res=multi_model.predict(input_embedding)
+    multi_model = joblib.load('decision_model.joblib')
+    res = multi_model.predict(input_embedding)
     return res
 
 # Streamlit app
 def main():
-    st.title("Comment Classification App")
+    st.title("Offensive Comment Identification App")
 
     # Text boxes for user input
     text_input_1 = st.text_area("Enter comment:", height=100)
