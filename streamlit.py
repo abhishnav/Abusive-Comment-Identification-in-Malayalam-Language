@@ -33,7 +33,7 @@ def classify_offensive(text):
 
 # Streamlit app
 def main():
-    st.title("Offensive Comment Identification App")
+    st.title("Comment Classification App")
 
     # Text boxes for user input
     text_input_1 = st.text_area("Enter comment:", height=100)
